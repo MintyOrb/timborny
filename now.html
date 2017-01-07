@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<title>Some Things.</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top" style="opacity:.95">
+  <ul class="w3-navbar w3-white w3-wide w3-padding-8 w3-card-2">
+    <li>
+      <a href="#home" class="w3-margin-left"><b>Tim</b> Borny</a>
+    </li>
+    <!-- Float links to the right. Hide them on small screens -->
+    <li class="w3-right w3-hide-small">
+      <a href="#now" class="w3-left">Now</a>
+      <a href="#where" class="w3-left">Location</a>
+      <!-- <a href="#about" class="w3-left">About</a>
+      <a href="#contact" class="w3-left w3-margin-right">Contact</a> -->
+    </li>
+  </ul>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <img class="w3-image" src="mtn2.jpg" alt="ha" width="1500" height="800">
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Tim</b></span> <span class="w3-hide-small w3-text-light-grey">Borny</span></h1>
+    <p class="w3-display-middle w3-text-white w3-padding" style="margin-top:75px"> is a generalist.</p>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+  <div style="height:40px"></div>
+  <img class="w3-image w3-center" style="height:50px; display:block; margin:0 auto" src="bigpicturesthresholdscrosssections.PNG">
+
+  <!-- About Section -->
+  <div class="w3-container w3-padding-32" id="now"s>
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-12">Now <h6>last updated 2017.1.6</h6></h3>
+    <p>Jobless and houseless by design; traveling though Oceania and Southeast Asia and working on projects. Here are some specifics:</p>
+
+    <ul>
+      <li style="margin-top:15px">Building a database.</li>
+      A graph database for organzing the universe along time and size scales. Symbolic and multi-lingual. Tying in images, videos, and other media gathered over the last several years. Evnentually tying in community criticisms, comments, questions, etc.
+
+      <li style="margin-top:15px">Building a web interface.</li>
+      Knowlo.io, a site to explore and learn about humanities greatest insights.
+
+      <li style="margin-top:15px">Rapid prototyping of messages and mediums.</li>
+      I have a laundry list of ideas to flesh out and plan to do so in the form of articles, comics, drawings, video...
+      Certainly need to make this goal a bit more concrete.
+
+      <li style="margin-top:15px">Working towards a 'transparency first' lifestyle.</li>
+    </ul>
+
+  </div>
+
+
+
+  <!-- Google Map -->
+  <div class="w3-container w3-padding-32" id="where">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-12">Current Location</h3>
+  </div>
+</div>
+<div id="googleMap" class="w3-grayscale" style="width:100%;height:450px;"></div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <p>No legal blah here.</p>
+</footer>
+
+<!-- Add Google Maps -->
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+
+<script>
+<!-- Google Map Location -->
+var myCenter = new google.maps.LatLng(-33.8688, 151.2093)
+
+function initialize() {
+var mapProp = {
+  center: myCenter,
+  zoom: 12,
+  scrollwheel: false,
+  draggable: false,
+  mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker = new google.maps.Marker({
+  position: myCenter,
+});
+
+marker.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+</body>
+</html>
